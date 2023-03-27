@@ -6,8 +6,9 @@
 
 int main() {
 	
+	
+	//askWrite::ask();
 	/*
-	askWrite::ask();
 	shelf test;
 	test.chargeInfo();
 	test.printInfo();
@@ -15,11 +16,12 @@ int main() {
 	
 	//Test string lenght
 	shelf testShelf;
-	testShelf.chargeInfo();
+	//testShelf.chargeInfo();
 	/*
 	std::string test = "this is a test";
 	std::cout << "The length obtained is: " << test.length();
 	*/
+	//testShelf.chargeInfo();
 	bool end = false;
 	while (!end) {
 		Menu::display(end, testShelf);
@@ -44,4 +46,6 @@ int main() {
 // Note 4: make a txt file which contains paths of .exe applications for
 // Easy launch with PowerShell. Ex: firefox.exe path or dev-cpp.exe path.
 
+
+// Note 5: Add types control in each input by the user to make the program less breakable.
 
