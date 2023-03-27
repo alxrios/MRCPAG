@@ -11,6 +11,7 @@ void writeClass::writeFile() {
 	int currentPage[12];
 	int totalPages[12];
 	int length = 12;
+	std::string filePath[12];
 	for (int i = 0; i < length; i++) {
 		std::cout << i + 1 << ".Name: ";
 		getline(std::cin, names[i]);
@@ -18,8 +19,10 @@ void writeClass::writeFile() {
 		std::cin >> currentPage[i];
 		std::cout << i + 1 << ".total pages: ";
 		std::cin >> totalPages[i];
-		getline(std::cin, filePath[i]);
 		std::cin.ignore();
+		std::cout << i + 1 << ".File path: ";
+		getline(std::cin, filePath[i]);
+		// std::cin.ignore();
 	}
 	
 	// Writing to file
