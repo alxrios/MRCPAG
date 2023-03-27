@@ -9,6 +9,7 @@ shelf::shelf() {
 		names[i] = "";
 		currentPage[i] = 0;
 		totalPages[i] = 0;
+		filePath[i] = "";
 	}
 }
 
@@ -23,6 +24,8 @@ void shelf::chargeInfo() {
 		infile >> currentPage[i];
 		infile >> totalPages[i];
 		infile.ignore();
+		getline(infile, filePath[i]);
+		// infile.ignore();
 	}
 	infile.close();
 	
@@ -31,9 +34,13 @@ void shelf::chargeInfo() {
 
 void shelf::printInfo() {
 	std::cout << "BOOK SHELF INFO:(book name, current page, total pages):\n________________________________________________________\n\n";
+	float percent;
 	for (int i = 0; i < length; i++) {
-		std::cout << i + 1 << ". " << names[i] << " " << currentPage[i] << " " << totalPages[i] << "\n";
-		std::cout << "---------------------------------------------------------------\n";
+		std::cout.precision(3);
+		percent = (static_cast<float>(currentPage[i])/static_cast<float>(totalPages[i]))*100.0;
+		std::cout << i + 1 << ". " << names[i] << " " << currentPage[i] << " " << totalPages[i] << " " << percent << "%\n";
+		std::cout << filePath[i];
+		std::cout << "\n---------------------------------------------------------------\n";
 	}
 }
 
@@ -57,6 +64,7 @@ void shelf::writeFfile() {
 		outfile << names[i] << "\n";
 		outfile << currentPage[i] << "\n";
 		outfile << totalPages[i] << "\n";
+		outfile << filePath[i] << "\n";
 	}
 	outfile.close();
 }
@@ -66,15 +74,24 @@ void shelf::deleteBook(int index) {
 		names[i] = names[i + 1];
 		currentPage[i] = currentPage[i + 1];
 		totalPages[i] = totalPages[i + 1];
+		filePath[i] = filePath[i + 1];
 	}
 	names[length - 1] = "";
 	currentPage[length - 1] = 0;
 	totalPages[length - 1] = 0;
+	filePath[length - 1] = "";
 	writeFfile();
 }
 
 
-
+void shelf::renameBook(int index) {
+	std::cout << "Introduce the new name: ";
+	std::string newName;
+	std::cin.ignore();
+	getline(std::cin, newName);
+	names[index - 1] = newName;
+	writeFfile();
+}
 
 
 
