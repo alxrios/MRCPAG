@@ -8,6 +8,7 @@ class shelf {
 		shelf(); //default constructor
 		void actualizeCpage();
 		void deleteBook(int);
+		void renameBook(int);
 	
 	private:
 		std::string names[12];
@@ -18,3 +19,4 @@ class shelf {
 		void writeFfile();
 		
 };
+
