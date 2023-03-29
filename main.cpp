@@ -35,5 +35,5 @@ int main() {
 
 // Note 5: Add types control in each input by the user to make the program less breakable.
 
-
+// Note 6: When ask (y/n) question add control of other letters other than y n.
 
