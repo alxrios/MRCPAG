@@ -8,4 +8,5 @@ class writeClass {
 		   to a txt file using c++ funcitons
 		   for avoid formating issues.
 		   Only use once.*/
+		static void writeFile2();
 };
