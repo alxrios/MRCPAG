@@ -3,29 +3,21 @@
 #include "writeClass.h"
 #include "askWrite.h"
 #include "Menu.h"
+#include "ProgressBar.h"
 
 int main() {
 	
 	
-	//askWrite::ask();
-	/*
-	shelf test;
-	test.chargeInfo();
-	test.printInfo();
-	*/
+	shelf bookShelf;
+	shelf2 bookShelf2;
 	
-	//Test string lenght
-	shelf testShelf;
-	//testShelf.chargeInfo();
-	/*
-	std::string test = "this is a test";
-	std::cout << "The length obtained is: " << test.length();
-	*/
-	//testShelf.chargeInfo();
+	
 	bool end = false;
 	while (!end) {
-		Menu::display(end, testShelf);
+		Menu::display(end, bookShelf, bookShelf2);
 	}
+	
+	
 	
 	return 0;
 }
@@ -37,15 +29,11 @@ int main() {
 // Read funciton must skip this line
 
 
-// Note 2: create a menu function in a class with static void
-
-
-// Note 3: Add a new line which is going to be the path info of the file.
-
-
 // Note 4: make a txt file which contains paths of .exe applications for
-// Easy launch with PowerShell. Ex: firefox.exe path or dev-cpp.exe path.
+// Easy launch with PowerShell. Ex: firefox.exe path.
 
 
 // Note 5: Add types control in each input by the user to make the program less breakable.
+
+
 
