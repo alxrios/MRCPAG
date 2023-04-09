@@ -9,17 +9,16 @@ class shelf {
 		void actualizeCpage();
 		void deleteBook(int);
 		void renameBook(int);
+		static const int length = 14;
 	
 	private:
-		std::string names[12];
-		int currentPage[12];
-		int totalPages[12];
-		std::string filePath[12];
-		int length; //Same as previous arrays size
+		std::string names[length];
+		int currentPage[length];
+		int totalPages[length];
+		std::string filePath[length];
 		void writeFfile();
 		
 };
-
 
 class shelf2 : public shelf {
 	public:
@@ -29,13 +28,12 @@ class shelf2 : public shelf {
 		void actualizeCpage();
 		void deleteBook(int);
 		void renameBook(int);
+		static const int length = 30; //Same as previous arrays size
 	private:
-		std::string subject[30];
-		std::string names[30];
-		int currentPage[30];
-		int totalPages[30];
-		std::string filePath[30];
-		int length; //Same as previous arrays size
+		std::string subject[length];
+		std::string names[length];
+		int currentPage[length];
+		int totalPages[length];
+		std::string filePath[length];
 		void writeFfile();
 };
-
