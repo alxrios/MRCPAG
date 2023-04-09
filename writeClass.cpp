@@ -2,17 +2,16 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include "MRCPAG.h"
 
 void writeClass::writeFile() {
 	std::cout << "Current books reading info...\n";
 	std::cout << "Please introduce name, current page and total number of pages of each book\n\n";
-	std::string names[12];
-	int currentPage[12];
-	int totalPages[12];
-	int length = 12;
-	std::string filePath[12];
-	for (int i = 0; i < length; i++) {
+	std::string names[shelf::length];
+int currentPage[shelf::length];
+	int totalPages[shelf::length];
+	std::string filePath[shelf::length];
+	for (int i = 0; i < shelf::length; i++) {
 		std::cout << i + 1 << ".Name: ";
 		getline(std::cin, names[i]);
 		std::cout << i + 1 << ".current page: ";
@@ -28,7 +27,7 @@ void writeClass::writeFile() {
 	// Writing to file
 	std::ofstream outfile;
 	outfile.open("MRCPAG.txt");
-	for (int i = 0; i < length; i++) {
+	for (int i = 0; i < shelf::length; i++) {
 		outfile << names[i] << "\n";
 		outfile << currentPage[i] << "\n";
 		outfile << totalPages[i] << "\n";
@@ -39,14 +38,14 @@ void writeClass::writeFile() {
 
 void writeClass::writeFile2() {
 	std::cout << "Current books reading info...\n";
-	std::cout << "Please introduce subject, name, current page and total number of pages of each book\n\n";
-	std::string subject[30];
-	std::string names[30];
-	int currentPage[30];
-	int totalPages[30];
-	int length = 30;
-	std::string filePath[30];
-	for (int i = 0; i < length; i++) {
+	std::cout << "Please introduce subject, name, current page and total "
+		"number of pages of each book\n\n";
+	std::string subject[shelf2::length];
+	std::string names[shelf2::length];
+	int currentPage[shelf2::length];
+	int totalPages[shelf2::length];
+	std::string filePath[shelf2::length];
+	for (int i = 0; i < shelf2::length; i++) {
 		std::cout << i + 1 << ".Subject: ";
 		getline(std::cin, subject[i]);
 		std::cout << i + 1 << ".Name: ";
@@ -64,7 +63,7 @@ void writeClass::writeFile2() {
 	// Writing to file
 	std::ofstream outfile;
 	outfile.open("MRCPAG2.txt");
-	for (int i = 0; i < length; i++) {
+	for (int i = 0; i < shelf2::length; i++) {
 		outfile << subject[i] << "\n";
 		outfile << names[i] << "\n";
 		outfile << currentPage[i] << "\n";
