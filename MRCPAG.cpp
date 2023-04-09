@@ -5,7 +5,7 @@
 
 
 shelf::shelf() {
-	length = 12;
+	// length = 14;
 	for (int i = 0; i < length; i++) {
 		names[i] = "";
 		currentPage[i] = 0;
@@ -15,8 +15,6 @@ shelf::shelf() {
 }
 
 void shelf::chargeInfo() {
-	//First approach to charge info from file
-	//Lets charge info from the user
 	std::ifstream infile;
 	infile.open("MRCPAG.txt");
 	//skip first line here
@@ -34,12 +32,15 @@ void shelf::chargeInfo() {
 }
 
 void shelf::printInfo() {
-	std::cout << "BOOK SHELF INFO:(book name, current page, total pages):\n________________________________________________________\n\n";
+	std::cout << "BOOK SHELF INFO:(book name," 
+		"current page, total pages):"
+		"\n________________________________________________________\n\n";
 	float percent;
 	for (int i = 0; i < length; i++) {
 		std::cout.precision(3);
 		percent = (static_cast<float>(currentPage[i])/static_cast<float>(totalPages[i]))*100.0;
-		std::cout << i + 1 << ". " << names[i] << " | " << currentPage[i] << " | " << totalPages[i] << " | " << percent << "% | " << ProgressBar::display(percent/10.0) << "\n";
+		std::cout << i + 1 << ". " << names[i] << " | " << currentPage[i] << " | " << 
+			totalPages[i] << " | " << percent << "% | " << ProgressBar::display(percent/10.0) << "\n";
 		std::cout << filePath[i];
 		std::cout << "\n---------------------------------------------------------------\n";
 	}
@@ -96,7 +97,7 @@ void shelf::renameBook(int index) {
 
 
 shelf2::shelf2() {
-	length = 30;
+	// length = 30;
 	for (int i = 0; i < length; i++) {
 		names[i] = "";
 		currentPage[i] = 0;
@@ -107,12 +108,15 @@ shelf2::shelf2() {
 }
 
 void shelf2::printInfo() {
-	std::cout << "BOOK SHELF INFO:(subject, book name, current page, total pages, percentage read):\n________________________________________________________\n\n";
+	std::cout << "BOOK SHELF INFO:(subject, book name,"
+	" current page, total pages, percentage read):"
+	"\n________________________________________________________\n\n";
 	float percent;
 	for (int i = 0; i < length; i++) {
 		std::cout.precision(3);
 		percent = (static_cast<float>(currentPage[i])/static_cast<float>(totalPages[i]))*100.0;
-		std::cout << i + 1 << ". " << subject[i] << " | " << names[i] << " | " << currentPage[i] << " | " << totalPages[i] << " | " << percent << "% | " << ProgressBar::display(percent/10.0) << "\n";
+		std::cout << i + 1 << ". " << subject[i] << " | " << names[i] << " | " << currentPage[i] << 
+			" | " << totalPages[i] << " | " << percent << "% | " << ProgressBar::display(percent/10.0) << "\n";
 		std::cout << filePath[i];
 		std::cout << "\n---------------------------------------------------------------\n";
 	}
