@@ -2,7 +2,6 @@
 #include <iostream>
 #include "askWrite.h"
 
-
 void Menu::display(bool & end, shelf books, shelf2 books2) {
 	std::cout << "Which file do you want to use? (1/2): ";
 	int fileOpt;
@@ -105,7 +104,6 @@ void Menu::display(bool & end, shelf books, shelf2 books2) {
 		}
 	}
 }
-
 
 void Menu::displayText() {
 	std::cout << "\nChoose an option:\n";
