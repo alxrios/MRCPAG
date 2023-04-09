@@ -12,7 +12,6 @@ void askWrite::ask() {
 	}
 }
 
-
 void askWrite::ask2() {
 	std::cout << "Do you wanna write the file 2 for the first time?: (y/n)\n";
 	char option = 'n';
