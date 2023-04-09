@@ -28,7 +28,7 @@ class shelf2 : public shelf {
 		void actualizeCpage();
 		void deleteBook(int);
 		void renameBook(int);
-		static const int length = 30; //Same as previous arrays size
+		static const int length = 30;
 	private:
 		std::string subject[length];
 		std::string names[length];
