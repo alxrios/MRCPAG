@@ -106,12 +106,12 @@ void Menu::display(bool & end, shelf books, shelf2 books2) {
 }
 
 void Menu::displayText() {
-	std::cout << "\nChoose an option:\n";
-	std::cout << "1. Write the file with input introduced by the console.\n";
-	std::cout << "2. Actualize current page of a book.\n";
-	std::cout << "3. Delete a book.\n";
-	std::cout << "4. Rename a book.\n";
-	std::cout << "5. Actualize the total number of pages of a book\n";
-	std::cout << "6. Print the info.\n";
-	std::cout << "9. End program.\n";
+	std::cout << "\nChoose an option:\n"
+	"1. Write the file with input introduced by the console.\n"
+	"2. Actualize current page of a book.\n"
+	"3. Delete a book.\n"
+	"4. Rename a book.\n"
+	"5. Actualize the total number of pages of a book\n"
+	"6. Print the info.\n"
+	"9. End program.\n";
 }
